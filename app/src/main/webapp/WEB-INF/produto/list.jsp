@@ -16,13 +16,12 @@
             <a href="/produto/insert" class="btn btn-primary">
                 Novo Produto
             </a>
-    
+
             <table class="table">
                 <tr>
                     <td>ID</td>
                     <td>Título</td>
                     <td>Descrição</td>
-
                     <td>&nbsp;</td>
                 </tr>
 
@@ -35,7 +34,7 @@
                     <!--Update e Delete-->
                         <td>
                             <a href="/produto/update?id=${prItem.id}" class="btn btn-warning">Editar</a>
-                            <a href="/produto/delete?id=${prItem.id}" class="brn btn-danger">Remover</a>
+                            <a href="/produto/delete?id=${prItem.id}" class="btn btn-danger">Remover</a>
                         </td>
                     </tr>
                 </t:forEach>
@@ -43,6 +42,5 @@
             </table>
 
         </div>
-
     </body>
 </html>

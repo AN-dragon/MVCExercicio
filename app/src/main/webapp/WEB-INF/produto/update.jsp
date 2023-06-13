@@ -7,20 +7,29 @@
     </head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <body>
+        <div class="container">
 
-        <h1>Editar Produto</h1>
+            <h1 style="color: #b88d01;">Editar Produto</h1>
 
-        <form action="/produto/update" method="post">
-            <input type="hidden" name="id" value="${produto.id}" />
-            <label for="titulo">Título</label>
-            <input type="text" name="titulo" class="form-control" value="${produto.titulo}" />
+            <form action="/produto/update" method="post">
+                <input type="hidden" name="id" value="${produto.id}" />
 
-            <label for="descricao">Descrição</label>
-            <input type="text" name="descricao" class="form-control" value="${produto.descricao}" />
+                <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <input type="text" name="titulo" class="form-control" value="${produto.titulo}" />
+                </div>
 
-            <a href="/produto/list">Voltar</a>
-            <button type="submit">Salvar</button>
-        </form>
-    
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" name="descricao" class="form-control" value="${produto.descricao}" />
+                </div>
+
+                <br />
+
+                <a href="/produto/list" class="btn btn-primary">Voltar</a>
+                <button type="submit" class="btn btn-success">Salvar</button>
+            </form>
+
+        </div>
     </body>
 </html>
