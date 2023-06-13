@@ -9,6 +9,8 @@
     </head>
     <body>
         <h1>Produtos</h1>
+
+        <a href="/produto/insert">Novo Produto</a>
     
         <table>
             <tr>

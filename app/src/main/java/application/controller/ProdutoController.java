@@ -26,4 +26,24 @@ public class ProdutoController {
 
         return "produto/list";
     }
+
+    //Insert
+    @RequestMapping("/insert")
+    public String insert() {
+
+        return "produto/insert";
+    }
+
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    public String insert(
+        @RequestParam("titulo") String titulo,
+        @RequestParam("descricao") String descricao) {
+            Produto produto = new Produto();
+            produto.setTitulo(titulo);
+            produto.setDescricao(descricao);
+
+            produtoRepo.save(produto);
+            return "redirect:/produto/list";
+        }
+        
 }
