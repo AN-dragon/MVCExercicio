@@ -7,6 +7,7 @@
     <head>
         <title>Adicionar Produto</title>
     </head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <body>
 
         <h1>Novo Produto</h1>
