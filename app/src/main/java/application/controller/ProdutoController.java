@@ -24,14 +24,14 @@ public class ProdutoController {
     public String list(Model model) {
         model.addAttribute("produtos", produtoRepo.findAll());
 
-        return "produto/list";
+        return "/produto/list";
     }
 
     //Insert
     @RequestMapping("/insert")
     public String insert() {
 
-        return "produto/insert";
+        return "/produto/insert";
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
@@ -45,5 +45,36 @@ public class ProdutoController {
             produtoRepo.save(produto);
             return "redirect:/produto/list";
         }
-        
+
+    //Update
+    @RequestMapping("/update")
+    public String update(Model model, @RequestParam("id") int id) {
+        Optional<Produto> produto = produtoRepo.findById(id);
+
+        if(produto.isPresent()) {
+            model.addAttribute("produto", produto.get());
+
+            return "/produto/update";
+        }
+
+        return "redirect:/produto/list";
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String update(
+        @RequestParam("id") int id,
+        @RequestParam("titulo") String titulo,
+        @RequestParam("descricao") String descricao) {
+            
+            Optional<Produto> produto = produtoRepo.findById(id);
+
+            if(produto.isPresent()) {
+                produto.get().setTitulo(titulo);
+                produto.get().setDescricao(descricao);
+
+                produtoRepo.save(produto.get());
+            }
+
+            return "redirect:/produto/list";
+        }
 }

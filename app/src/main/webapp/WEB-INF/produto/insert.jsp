@@ -11,11 +11,11 @@
 
         <h1>Novo Produto</h1>
 
-        <form action="/produto/insert">
-            <label for="titulo">Título</label>
+        <form action="/produto/insert" method="post">
+            <label for="titulo">Título:</label>
             <input type="text" name="titulo" class="form-control" />
 
-            <label for="descricao">Descrição</label>
+            <label for="descricao">Descrição:</label>
             <input type="text" name="descricao" class="form-control" />
 
             <a href="/produto/list">Voltar</a>

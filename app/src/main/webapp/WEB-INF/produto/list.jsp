@@ -25,6 +25,11 @@
                     <td>${prItem.id}</td>
                     <td>${prItem.titulo}</td>
                     <td>${prItem.descricao}</td>
+
+                    <!--Update-->
+                    <td>
+                        <a href="/produto/update?id=${prItem.id}">Editar</a>
+                    </td>
                 </tr>
             </t:forEach>
             

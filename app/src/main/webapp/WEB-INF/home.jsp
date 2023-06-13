@@ -10,7 +10,7 @@
         <h1>Olá Spring!!!</h1>
 
         <p style="text-align: center;">
-            <a href="produto/list" style="color: #00203d; text-decoration: none; font-size: 20px;">
+            <a href="produto/list" style="color: #00203d; text-decoration: none; font-size: 22px;">
                 Ver lista de produtos
             </a>
         </p>
