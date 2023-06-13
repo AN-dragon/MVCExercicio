@@ -19,6 +19,7 @@ public class ProdutoController {
     @Autowired
     private ProdutoRepository produtoRepo;
 
+
     //Lista
     @RequestMapping("/list")
     public String list(Model model) {
@@ -26,6 +27,7 @@ public class ProdutoController {
 
         return "/produto/list";
     }
+
 
     //Insert
     @RequestMapping("/insert")
@@ -45,6 +47,7 @@ public class ProdutoController {
             produtoRepo.save(produto);
             return "redirect:/produto/list";
         }
+
 
     //Update
     @RequestMapping("/update")
@@ -77,4 +80,28 @@ public class ProdutoController {
 
             return "redirect:/produto/list";
         }
+
+
+    //Delete
+    @RequestMapping("/delete")
+    public String delete(Model model, @RequestParam("id") int id) {
+        Optional<Produto> produto = produtoRepo.findById(id);
+
+        if(produto.isPresent()) {
+            model.addAttribute("produto", produto.get());
+            produtoRepo.delete(produto.get());
+            
+            return "/produto/delete";
+        }
+
+        return "redirect:/produto/list";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String delete(@RequestParam("id") int id) {
+        produtoRepo.deleteById(id);
+
+        return "redirect:/produto/list";
+    }
+
 }

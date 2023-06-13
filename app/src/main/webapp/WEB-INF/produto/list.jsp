@@ -26,9 +26,10 @@
                     <td>${prItem.titulo}</td>
                     <td>${prItem.descricao}</td>
 
-                    <!--Update-->
+                    <!--Update e Delete-->
                     <td>
                         <a href="/produto/update?id=${prItem.id}">Editar</a>
+                        <a href="/produto/delete?id=${prItem.id}">Remover</a>
                     </td>
                 </tr>
             </t:forEach>
